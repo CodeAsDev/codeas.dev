@@ -1,13 +1,13 @@
 # Codeas.dev
 
-This is a the website repository for [codeas.dev](https://www.codeas.dev)
+This is the website repository for [codeas.dev](https://www.codeas.dev)
 
 The website uses following techs:
 
 - [Nextjs](https://nextjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Shadcn-UI](https://ui.shadcn.com/)
-- MDX
+- [MDX](https://mdxjs.com/)
 - [Velite](https://velite.js.org/)
 
 ## Getting Started
