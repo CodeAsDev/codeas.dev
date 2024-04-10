@@ -43,7 +43,6 @@ function SiteHeader() {
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
-
             <MobileNav />
           </nav>
         </div>
