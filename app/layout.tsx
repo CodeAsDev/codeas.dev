@@ -18,7 +18,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const className = cn('min-h-screen bg-background font-sans antialiased', inter.variable)
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-pt-20">
       <body className={className}>
         <Providers>
           <div className="relative flex flex-col min-h-dvh bg-background">
