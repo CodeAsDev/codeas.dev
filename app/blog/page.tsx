@@ -9,7 +9,7 @@ interface BlogPageProps {
   }
 }
 
-const POSTS_PER_PAGE = 1
+const POSTS_PER_PAGE = 5
 
 async function BlogPage({ searchParams }: BlogPageProps) {
   const currentPage = Number(searchParams.page ?? 1) || 1
