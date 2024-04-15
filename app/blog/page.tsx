@@ -1,10 +1,22 @@
 import { posts } from '#site/content'
 import PostItem from '@/components/post-item'
+import QueryPagination from '@/components/query-pagination'
 import { sortPosts } from '@/lib/utils'
 
-async function BlogPage() {
+interface BlogPageProps {
+  searchParams: {
+    page?: string
+  }
+}
+
+const POSTS_PER_PAGE = 1
+
+async function BlogPage({ searchParams }: BlogPageProps) {
+  const currentPage = Number(searchParams.page ?? 1) || 1
   const sortedPosts = sortPosts(posts.filter((post) => post.published))
-  const displayPosts = sortedPosts
+
+  const displayPosts = sortedPosts.slice(POSTS_PER_PAGE * (currentPage - 1), POSTS_PER_PAGE * currentPage)
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE)
 
   function renderPosts() {
     if (!displayPosts.length) {
@@ -12,16 +24,20 @@ async function BlogPage() {
     }
 
     return (
-      <ul className="flex flex-col">
-        {displayPosts.map((post) => {
-          const { slug, title, description, date } = post
-          return (
-            <li key={slug}>
-              <PostItem slug={slug} title={title} description={description} date={date} />
-            </li>
-          )
-        })}
-      </ul>
+      <>
+        <ul className="flex flex-col">
+          {displayPosts.map((post) => {
+            const { slug, title, description, date } = post
+            return (
+              <li key={slug}>
+                <PostItem slug={slug} title={title} description={description} date={date} />
+              </li>
+            )
+          })}
+        </ul>
+
+        <QueryPagination totalPages={totalPages} className="justify-end mt-4" />
+      </>
     )
   }
 
