@@ -10,8 +10,9 @@ import { siteConfig } from '@/config/site'
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  title: 'Code As Dev',
+  title: siteConfig.name,
   description: siteConfig.description,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
 }
 
 function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

@@ -2,6 +2,7 @@ import { posts } from '#site/content'
 import PostItem from '@/components/post-item'
 import QueryPagination from '@/components/query-pagination'
 import { sortPosts } from '@/lib/utils'
+import { Metadata } from 'next'
 
 interface BlogPageProps {
   searchParams: {
@@ -11,9 +12,14 @@ interface BlogPageProps {
 
 const POSTS_PER_PAGE = 5
 
+export const metadata: Metadata = {
+  title: 'My Blog',
+  description: 'This is CodeAsDev blogs',
+}
+
 async function BlogPage({ searchParams }: BlogPageProps) {
   const currentPage = Number(searchParams.page ?? 1) || 1
-  const sortedPosts = sortPosts(posts.filter((post) => post.published))
+  const sortedPosts = sortPosts(posts.filter(post => post.published))
 
   const displayPosts = sortedPosts.slice(POSTS_PER_PAGE * (currentPage - 1), POSTS_PER_PAGE * currentPage)
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE)
@@ -26,7 +32,7 @@ async function BlogPage({ searchParams }: BlogPageProps) {
     return (
       <>
         <ul className="flex flex-col">
-          {displayPosts.map((post) => {
+          {displayPosts.map(post => {
             const { slug, title, description, date } = post
             return (
               <li key={slug}>

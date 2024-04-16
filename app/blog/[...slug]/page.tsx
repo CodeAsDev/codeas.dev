@@ -2,6 +2,8 @@ import { posts } from '#site/content'
 import { MDXContent } from '@/components/mdx-components'
 import { notFound } from 'next/navigation'
 import '@/styles/mdx.css'
+import { Metadata } from 'next'
+import { siteConfig } from '@/config/site'
 
 interface PostPageProps {
   params: {
@@ -11,11 +13,44 @@ interface PostPageProps {
 
 async function getPostFromParams(params: PostPageProps['params']) {
   const slug = params?.slug.join('')
-  return posts.find((post) => post.slugAsParams === slug)
+  return posts.find(post => post.slugAsParams === slug)
 }
 
 export async function generateStaticParams(): Promise<PostPageProps['params'][]> {
-  return posts.map((post) => ({ slug: post.slugAsParams.split('/') }))
+  return posts.map(post => ({ slug: post.slugAsParams.split('/') }))
+}
+
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+  const post = await getPostFromParams(params)
+
+  if (!post || !post.published) {
+    return {}
+  }
+
+  const { title, description, slug } = post
+  const ogSearchParams = new URLSearchParams()
+  ogSearchParams.set('title', title)
+
+  return {
+    title,
+    description,
+    authors: {
+      name: siteConfig.author,
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: slug,
+      images: [{ url: `/apu/og?${ogSearchParams.toString()}`, width: 1600, height: 900, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [{ url: `/api/og?${ogSearchParams.toString()}`, width: 1600, height: 900, alt: title }],
+    },
+  }
 }
 
 async function PostPage({ params }: PostPageProps) {

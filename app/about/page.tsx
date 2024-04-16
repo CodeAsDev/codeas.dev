@@ -1,5 +1,23 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { siteConfig } from '@/config/site'
+import { Metadata } from 'next'
+
+const title = 'About Me'
+const description = 'Information about me'
+const ogSearchParams = new URLSearchParams()
+ogSearchParams.set('title', title)
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: 'article',
+    url: `${siteConfig.url}/about`,
+    images: [{ url: `/api/og?${ogSearchParams.toString()}`, width: 1600, height: 900, alt: title }],
+  },
+}
 
 function About() {
   return (
