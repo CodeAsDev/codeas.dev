@@ -3,6 +3,7 @@ import PostItem from '@/components/post-item'
 import QueryPagination from '@/components/query-pagination'
 import { sortPosts } from '@/lib/utils'
 import { Metadata } from 'next'
+import { siteConfig } from '@/config/site'
 
 interface BlogPageProps {
   searchParams: {
@@ -12,9 +13,21 @@ interface BlogPageProps {
 
 const POSTS_PER_PAGE = 5
 
+const title = `My Blog | ${siteConfig.name}`
+const description = 'This is CodeAsDev blogs'
+const ogSearchParams = new URLSearchParams()
+ogSearchParams.set('title', title)
+
 export const metadata: Metadata = {
-  title: 'My Blog',
-  description: 'This is CodeAsDev blogs',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: 'article',
+    url: `${siteConfig.url}/blog`,
+    images: [{ url: `/api/og?${ogSearchParams.toString()}`, width: 1600, height: 900, alt: title }],
+  },
 }
 
 async function BlogPage({ searchParams }: BlogPageProps) {

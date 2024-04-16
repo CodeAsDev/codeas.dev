@@ -4,6 +4,24 @@ import { cn, sortPosts } from '@/lib/utils'
 import Link from 'next/link'
 import { posts } from '#site/content'
 import PostItem from '@/components/post-item'
+import { Metadata } from 'next'
+
+const title = siteConfig.name
+const description = 'Information about me'
+const ogSearchParams = new URLSearchParams()
+ogSearchParams.set('title', title)
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: 'article',
+    url: `${siteConfig.url}`,
+    images: [{ url: `/api/og?${ogSearchParams.toString()}`, width: 1600, height: 900, alt: title }],
+  },
+}
 
 export default function Home() {
   const latestPosts = sortPosts(posts).slice(0, 5)
@@ -36,7 +54,7 @@ export default function Home() {
       <section className="container max-w-4xl py-6 lg:py-10 flex flex-col space-y-6 mt-60">
         <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center">Latest Posts</h2>
         <ul className="flex flex-col">
-          {latestPosts.map((post) => (
+          {latestPosts.map(post => (
             <li key={post.slug} className="first:border-t first:border-border">
               <PostItem slug={post.slug} title={post.title} description={post.description} date={post.date} />
             </li>
