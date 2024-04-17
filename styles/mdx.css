@@ -1,9 +1,9 @@
 [data-rehype-pretty-code-figure] pre {
-  @apply px-0;
+  @apply px-0 scrollbar-thin scrollbar-corner-rounded scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-slate-500/50 scrollbar-track-sky-500/[0.16];
 }
 
 [data-rehype-pretty-code-figure] code {
-  @apply text-sm !leading-loose md:text-base border-0 p-0;
+  @apply text-sm !leading-normal md:text-base border-0 p-0;
 }
 
 [data-rehype-pretty-code-figure] code[data-line-numbers] {

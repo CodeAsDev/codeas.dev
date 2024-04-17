@@ -38,7 +38,7 @@ const config = defineConfig({
   mdx: {
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, { theme: 'one-dark-pro' }],
+      [rehypePrettyCode, { theme: 'material-theme-ocean' }],
       [
         rehypeAutolinkHeadings,
         {
