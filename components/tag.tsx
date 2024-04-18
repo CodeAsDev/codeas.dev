@@ -19,7 +19,7 @@ function Tag({ tag, current, count }: TagProps) {
         badgeVariants({ variant: current ? 'default' : 'secondary', className: 'no-underline rounded-md' }),
       )}
     >
-      {tag}
+      {tag}&nbsp;&nbsp;{count ? `(${count})` : 0}
     </Link>
   )
 }

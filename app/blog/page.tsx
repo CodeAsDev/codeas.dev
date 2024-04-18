@@ -1,9 +1,11 @@
 import { posts } from '#site/content'
 import PostItem from '@/components/post-item'
 import QueryPagination from '@/components/query-pagination'
-import { sortPosts } from '@/lib/utils'
+import { getAllTags, sortPosts, sortTagsByCount } from '@/lib/utils'
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import Tag from '@/components/tag'
 
 interface BlogPageProps {
   searchParams: {
@@ -36,6 +38,8 @@ async function BlogPage({ searchParams }: BlogPageProps) {
 
   const displayPosts = sortedPosts.slice(POSTS_PER_PAGE * (currentPage - 1), POSTS_PER_PAGE * currentPage)
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE)
+  const tags = getAllTags(posts)
+  const sortedTags = sortTagsByCount(tags)
 
   function renderPosts() {
     if (!displayPosts.length) {
@@ -68,10 +72,22 @@ async function BlogPage({ searchParams }: BlogPageProps) {
           <p className="mt-2 md:mt-4 text-sm sm:text-xl text-muted-foreground">My ramblings on all things web dev.</p>
         </div>
       </div>
-
-      <hr className="mt-5 md:mt-8" />
-
-      {renderPosts()}
+      <div className="grid grid-cols-12 gap-4 my-5 md:my-8 ">
+        <div className="col-span-12 col-start-1 sm:col-span-8">
+          <hr />
+          {renderPosts()}
+        </div>
+        <Card className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
+          <CardHeader>
+            <CardTitle>Tags</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-2">
+            {sortedTags.map(tag => (
+              <Tag tag={tag} key={tag} count={tags[tag]} />
+            ))}
+          </CardContent>
+        </Card>
+      </div>
     </section>
   )
 }
