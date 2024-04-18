@@ -18,6 +18,7 @@ const posts = defineCollection({
       description: s.string().max(500),
       date: s.isodate(),
       published: s.boolean().default(true),
+      tas: s.array(s.string()).optional(),
       body: s.mdx(),
     })
     .transform(computedFields),
