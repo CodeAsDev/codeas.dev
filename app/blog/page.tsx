@@ -15,7 +15,7 @@ interface BlogPageProps {
 
 const POSTS_PER_PAGE = 5
 
-const title = `My Blog | ${siteConfig.name}`
+const title = `Blog | ${siteConfig.name}`
 const description = 'This is CodeAsDev blogs'
 const ogSearchParams = new URLSearchParams()
 ogSearchParams.set('title', title)
