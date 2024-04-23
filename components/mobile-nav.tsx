@@ -21,11 +21,7 @@ function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent side="right">
-        <MobileLink
-          href="/"
-          className="flex items-center"
-          onOpenChange={setOpen}
-        >
+        <MobileLink href="/" className="flex items-center" onOpenChange={setOpen}>
           <Icons.logo className="mr-2 size-4" />
           <span className="font-semibold text-xs">{siteConfig.name}</span>
         </MobileLink>
@@ -39,11 +35,7 @@ function MobileNav() {
           <Link target="_blank" rel="noreferrer" href={siteConfig.links.github}>
             Github
           </Link>
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href={siteConfig.links.twitter}
-          >
+          <Link target="_blank" rel="noreferrer" href={siteConfig.links.twitter}>
             Twitter
           </Link>
         </div>

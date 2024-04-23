@@ -4,20 +4,20 @@ import { Icons } from './icons'
 
 function SiteFooter() {
   return (
-    <footer>
-      <div className="mb-8 mt-16 flex flex-col items-center">
+    <footer className="container max-w-4xl">
+      <div className="mb-8 mt-16 flex flex-col">
         <div className="mb-4 flex space-x-4">
           <a target="_blank" rel="noreferrer" href="mailto:codeas.dev@gamil.com">
             <span className="sr-only">Mail</span>
-            <Mail className="size-6" />
+            <Mail className="size-4 md:size-5" />
           </a>
           <a target="_blank" rel="noreferrer" href={siteConfig.links.twitter}>
             <span className="sr-only">Twitter</span>
-            <Icons.twitter className="size-6" />
+            <Icons.twitter className="size-4 md:size-5" />
           </a>
           <a target="_blank" rel="noreferrer" href={siteConfig.links.github}>
             <span className="sr-only">Github</span>
-            <Icons.gitHub className="size-6" />
+            <Icons.gitHub className="size-4 md:size-5" />
           </a>
         </div>
         <div className="mb-4 space-x-2 text-xs text-muted-foreground">
@@ -46,14 +46,6 @@ function SiteFooter() {
             target="_blank"
           >
             Docker
-          </a>
-          &#44;&nbsp;By
-          <a
-            href={`${siteConfig.links.personalSite}/about`}
-            target="_self"
-            className="hover:underline underline-offset-4"
-          >
-            {siteConfig.author}
           </a>
         </div>
       </div>

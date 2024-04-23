@@ -17,7 +17,7 @@ function PostItem({ slug, title, description, date, tags }: PostItemProps) {
     <article className="flex flex-col gap-2 border-border border-b py-3">
       <div>
         <h2 className="text-2xl font-semibold">
-          <Link href={slug}>{title}</Link>
+          <Link href={`/${slug}`}>{title}</Link>
         </h2>
       </div>
       <div className="flex gap-2">{tags?.map(tag => <Tag tag={tag} key={tag} />)}</div>

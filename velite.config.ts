@@ -64,11 +64,6 @@ const config = defineConfig({
       ],
       () => tree => {
         visit(tree, node => {
-          if (node.raw) {
-            console.log(node.tagName)
-            console.log(node.raw)
-          }
-
           if (node?.type === 'element' && node?.tagName === 'figure') {
             if (!('data-rehype-pretty-code-figure' in node.properties)) {
               return

@@ -81,7 +81,7 @@ function TagPage({ params }: TagPageProps) {
           <hr />
           {renderPosts()}
         </div>
-        <Card className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
+        <Card className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1 border-none">
           <CardHeader>
             <CardTitle>Tags</CardTitle>
           </CardHeader>
