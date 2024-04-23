@@ -2,6 +2,7 @@ import { defineConfig, defineCollection, s } from 'velite'
 import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import { visit } from 'unist-util-visit'
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -38,6 +39,17 @@ const config = defineConfig({
   },
   mdx: {
     rehypePlugins: [
+      () => tree => {
+        visit(tree, node => {
+          if (node?.type === 'element' && node?.tagName === 'pre') {
+            const [codeEl] = node.children
+
+            if (codeEl.tagName !== 'code') return
+
+            node.raw = codeEl.children?.[0].value
+          }
+        })
+      },
       rehypeSlug,
       [rehypePrettyCode, { theme: 'material-theme-ocean' }],
       [
@@ -50,6 +62,26 @@ const config = defineConfig({
           },
         },
       ],
+      () => tree => {
+        visit(tree, node => {
+          if (node.raw) {
+            console.log(node.tagName)
+            console.log(node.raw)
+          }
+
+          if (node?.type === 'element' && node?.tagName === 'figure') {
+            if (!('data-rehype-pretty-code-figure' in node.properties)) {
+              return
+            }
+
+            for (const child of node.children) {
+              if (child.tagName === 'pre') {
+                child.properties['raw'] = node.raw
+              }
+            }
+          }
+        })
+      },
     ],
     remarkPlugins: [],
   },
