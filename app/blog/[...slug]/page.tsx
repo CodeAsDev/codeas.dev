@@ -63,7 +63,7 @@ async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="container py-6 prose dark:prose-invert max-w-4xl mx-auto">
-      <h1 className="mb-2">{post.title}</h1>
+      <h1 className="mb-4 font-semibold">{post.title}</h1>
       <div className="flex gap-2 my-2">{post.tags?.map(tag => <Tag tag={tag} key={tag} />)}</div>
       {post.description ? <p className="text-base mt-0 text-muted-foreground">{post.description}</p> : null}
 

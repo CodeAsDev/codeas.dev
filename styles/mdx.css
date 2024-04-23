@@ -3,7 +3,7 @@
 }
 
 [data-rehype-pretty-code-figure] code {
-  @apply text-sm !leading-normal md:text-base border-0 p-0;
+  @apply text-sm !leading-tight md:text-base border-0 p-0;
 }
 
 [data-rehype-pretty-code-figure] code[data-line-numbers] {
@@ -18,6 +18,10 @@
 
 [data-rehype-pretty-code-figure] [data-line] {
   @apply border-l-2 border-l-transparent px-3;
+}
+
+[data-rehype-pretty-code-figure] [data-rehype-pretty-code-title] {
+  @apply hidden;
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line] {

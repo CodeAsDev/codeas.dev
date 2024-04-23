@@ -72,6 +72,9 @@ const config = defineConfig({
             for (const child of node.children) {
               if (child.tagName === 'pre') {
                 child.properties['raw'] = node.raw
+                child.properties['filename'] = node.children
+                  .find((el: any) => 'data-rehype-pretty-code-title' in el.properties)
+                  ?.children?.at(0)?.value
               }
             }
           }

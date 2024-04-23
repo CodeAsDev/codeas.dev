@@ -14,7 +14,11 @@ function CopyButton({ text }: { text: string }) {
 
   return (
     <button disabled={isCopied} onClick={copy}>
-      {isCopied ? <CheckIcon className="size-4 text-green-600 dark:text-green-800" /> : <CopyIcon className="size-4" />}
+      {isCopied ? (
+        <CheckIcon className="size-4 text-green-600 dark:text-green-800" />
+      ) : (
+        <CopyIcon className="size-4 hover:text-slate-500" />
+      )}
     </button>
   )
 }

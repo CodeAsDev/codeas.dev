@@ -73,7 +73,7 @@ function TagPage({ params }: TagPageProps) {
     <section className="container max-w-6xl py-6 lg:py-10">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1">
-          <h1 className="inline-block font-bold text-lg md:text-3xl lg:text-5xl capitalize">{title}</h1>
+          <h1 className="inline-block font-semibold text-lg md:text-3xl lg:text-5xl capitalize">{title}</h1>
         </div>
       </div>
       <div className="grid grid-cols-12 gap-4 my-5 md:my-8 ">
