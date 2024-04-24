@@ -10,7 +10,7 @@
   counter-reset: line;
 }
 
-[data-rehype-pretty-code-figure] code[data-line-numbers]>[data-line]::before {
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
   @apply mr-4 inline-block w-4 text-right text-gray-500;
@@ -30,7 +30,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-chars] {
-  @apply rounded bg-zinc-600/50;
+  @apply rounded-sm bg-zinc-600/50;
   box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
 }
 
