@@ -13,9 +13,9 @@ function Pre({ children, raw, filename, ...props }: MdxPreProps) {
   return (
     <>
       <div className="rounded-t-md w-full h-10 flex justify-between items-center py-2 px-4 text-sm bg-gray-900">
-        <span className="uppercase">{lang ?? null} </span>
+        <span className="uppercase text-white/85">{lang ?? null} </span>
         <span className="flex items-center">
-          {filename ? <span className="italic mr-3 text-green-700 dark:text-green-900">{filename}</span> : null}
+          {filename ? <span className="italic mr-3 text-green-700 dark:text-green-800">{filename}</span> : null}
           <CopyButton text={raw} />
         </span>
       </div>
