@@ -38,7 +38,7 @@ export default function Home() {
             products&#44;&nbsp;becoming a better developer and growing a career in tech&#46;
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href="/blog" className={cn(buttonVariants({ size: 'lg' }), 'w-full sm:w-fit')}>
+            <Link href="/blog" className={cn(buttonVariants({ size: 'lg', variant: 'secondary' }), 'w-full sm:w-fit')}>
               View My Blog
             </Link>
             <Link

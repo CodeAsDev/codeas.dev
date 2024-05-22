@@ -8,9 +8,12 @@ import Link, { type LinkProps } from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Icons } from './icons'
 import { siteConfig } from '@/config/site'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 function MobileNav() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -21,21 +24,35 @@ function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent side="right">
-        <MobileLink href="/" className="flex items-center" onOpenChange={setOpen}>
+        <MobileLink href="/" className="flex items-center text-primary" onOpenChange={setOpen}>
           <Icons.logo className="mr-2 size-4" />
           <span className="font-semibold text-xs">{siteConfig.name}</span>
         </MobileLink>
         <div className="flex flex-col gap-3 mt-3">
-          <MobileLink href="/blog" onOpenChange={setOpen}>
+          <MobileLink
+            href="/blog"
+            className={cn(
+              'text-muted-foreground',
+              pathname === '/blog' ? 'text-foreground underline decoration-primary underline-offset-8' : '',
+            )}
+            onOpenChange={setOpen}
+          >
             Blog
           </MobileLink>
-          <MobileLink href="/about" onOpenChange={setOpen}>
+          <MobileLink
+            href="/about"
+            className={cn(
+              'text-muted-foreground',
+              pathname === '/about' ? 'text-foreground underline decoration-primary underline-offset-8' : '',
+            )}
+            onOpenChange={setOpen}
+          >
             About
           </MobileLink>
-          <Link target="_blank" rel="noreferrer" href={siteConfig.links.github}>
+          <Link target="_blank" className="text-muted-foreground" rel="noreferrer" href={siteConfig.links.github}>
             Github
           </Link>
-          <Link target="_blank" rel="noreferrer" href={siteConfig.links.twitter}>
+          <Link target="_blank" className="text-muted-foreground" rel="noreferrer" href={siteConfig.links.twitter}>
             Twitter
           </Link>
         </div>
