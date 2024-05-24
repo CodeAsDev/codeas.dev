@@ -30,6 +30,16 @@ function MobileNav() {
         </MobileLink>
         <div className="flex flex-col gap-3 mt-3">
           <MobileLink
+            href="/"
+            className={cn(
+              'text-muted-foreground',
+              pathname === '/' ? 'text-foreground underline decoration-primary underline-offset-8' : '',
+            )}
+            onOpenChange={setOpen}
+          >
+            Home
+          </MobileLink>
+          <MobileLink
             href="/blog"
             className={cn(
               'text-muted-foreground',
