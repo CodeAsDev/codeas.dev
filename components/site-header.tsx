@@ -8,7 +8,7 @@ import MobileNav from './mobile-nav'
 
 function SiteHeader() {
   return (
-    <header className="z-10 sticky top-0 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="z-10 sticky top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container max-w-5xl flex items-center h-14">
         <MainNav />
         <div className="flex flex-1 items-center justify-end space-x-2">
