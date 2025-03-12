@@ -3,7 +3,7 @@
 }
 
 [data-rehype-pretty-code-figure] code {
-  @apply text-sm !leading-tight md:text-base border-0 p-0;
+  @apply text-xs !leading-tight md:text-sm antialiased border-0 p-0 font-apm;
 }
 
 [data-rehype-pretty-code-figure] code[data-line-numbers] {

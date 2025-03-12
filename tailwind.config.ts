@@ -16,6 +16,15 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        apm: ['apm', ...fontFamily.sans],
+        ['apm-b']: ['apm-b', ...fontFamily.sans],
+        ['apm-bi']: ['apm-bi', ...fontFamily.sans],
+        ['apm-i']: ['apm-i', ...fontFamily.sans],
+        ['sg-l']: ['sg-l', ...fontFamily.sans],
+        ['sg']: ['sg', ...fontFamily.sans],
+        ['sg-m']: ['sg-m', ...fontFamily.sans],
+        ['sg-sb']: ['sg-sb', ...fontFamily.sans],
+        ['sg-b']: ['sg-b', ...fontFamily.sans],
       },
       colors: {
         border: 'hsl(var(--border))',

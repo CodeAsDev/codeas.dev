@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CopyIcon, CheckIcon } from 'lucide-react'
+import { CheckIcon, Clipboard } from 'lucide-react'
 
 function CopyButton({ text }: { text: string }) {
   const [isCopied, setIsCopied] = useState(false)
@@ -12,13 +12,17 @@ function CopyButton({ text }: { text: string }) {
     setTimeout(() => setIsCopied(false), 3000)
   }
 
+  function render() {
+    if (isCopied) {
+      return <CheckIcon className="size-4 text-green-700 dark:text-green-800" />
+    }
+
+    return <Clipboard className="size-4 hover:text-slate-600 text-white/40" />
+  }
+
   return (
     <button disabled={isCopied} onClick={copy}>
-      {isCopied ? (
-        <CheckIcon className="size-4 text-green-700 dark:text-green-800" />
-      ) : (
-        <CopyIcon className="size-4 hover:text-slate-500 text-white/85" />
-      )}
+      {render()}
     </button>
   )
 }

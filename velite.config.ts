@@ -3,6 +3,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { visit } from 'unist-util-visit'
+import { transformerCopyButton } from '@rehype-pretty/transformers'
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -51,7 +52,12 @@ const config = defineConfig({
         })
       },
       rehypeSlug,
-      [rehypePrettyCode, { theme: 'material-theme-ocean' }],
+      [
+        rehypePrettyCode,
+        {
+          theme: 'synthwave-84',
+        },
+      ],
       [
         rehypeAutolinkHeadings,
         {

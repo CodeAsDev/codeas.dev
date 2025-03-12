@@ -56,4 +56,71 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Anonymous Pro Minus */
+  @font-face {
+    font-family: 'apm-b';
+    src: url('/fonts/apm-b.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'apm-bi';
+    src: url('/fonts/apm-bi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'apm';
+    src: url('/fonts/apm.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'apm-i';
+    src: url('/fonts/apm-i.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Space Grotesk */
+  @font-face {
+    font-family: 'sg-l';
+    src: url('/fonts/sg-l.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'sg';
+    src: url('/fonts/sg.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'sg-m';
+    src: url('/fonts/sg-m.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'sg-sb';
+    src: url('/fonts/sg-sb.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'sg-b';
+    src: url('/fonts/sg-b.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 }
