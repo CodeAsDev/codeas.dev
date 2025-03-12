@@ -15,7 +15,7 @@ interface TagPageProps {
 
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
   const { tag } = params
-  const title = `Blog Tag \`${tag}\` | ${siteConfig.name}`
+  const title = `Tag \`${tag}\` | ${siteConfig.name}`
   const description = 'This is CodeAsDev blog tags'
   const ogSearchParams = new URLSearchParams()
   ogSearchParams.set('title', title)

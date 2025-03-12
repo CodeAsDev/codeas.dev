@@ -4,7 +4,7 @@ import { type Metadata } from 'next'
 import { posts } from '#site/content'
 import Tag from '@/components/tag'
 
-const title = `Blog Tags | ${siteConfig.name}`
+const title = `Tags | ${siteConfig.name}`
 const description = 'This is CodeAsDev blog tags'
 const ogSearchParams = new URLSearchParams()
 ogSearchParams.set('title', title)

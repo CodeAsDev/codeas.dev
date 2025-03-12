@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: 'CodeAsDev',
+  name: 'codeas.dev',
   url: 'https://www.codeas.dev',
-  description: 'Nextjs 14 blog using velite, tailwindcss and shadcn-ui',
+  description: 'Nextjs 14 website using velite, tailwindcss and shadcn-ui',
   author: 'Gavin Z.',
   links: {
     twitter: '',

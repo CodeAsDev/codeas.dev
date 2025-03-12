@@ -33,13 +33,13 @@ export default function Home() {
           <h1 className="text-2xl sm:text-4xl md:text-3xl lg:text-5xl font-bold text-balance">
             Hello&#44;&nbsp;&nbsp;I&apos;m Gavin
           </h1>
-          <p className="max-w-[42rem] text-muted-foreground sm:text-xl text-pretty">
+          <p className="max-w-[42rem] text-muted-foreground sm:text-xl text-pretty font-pht">
             Welcome to my digital space where I share what I&apos;m learning about shipping great
             products&#44;&nbsp;becoming a better developer and growing a career in tech&#46;
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href="/blog" className={cn(buttonVariants({ size: 'lg', variant: 'secondary' }), 'w-full sm:w-fit')}>
-              View My Blog
+            <Link href="/posts" className={cn(buttonVariants({ size: 'lg', variant: 'secondary' }), 'w-full sm:w-fit')}>
+              View My Posts
             </Link>
             <Link
               className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'w-full sm:w-fit')}

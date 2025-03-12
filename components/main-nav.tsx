@@ -10,8 +10,9 @@ function MainNav() {
   const pathname = usePathname()
   const links = [
     { href: '/', name: 'Home' },
-    { href: '/blog', name: 'Blog' },
+    { href: '/posts', name: 'Posts' },
     { href: '/projects', name: 'Projects' },
+    { href: '/learning-english', name: 'Learning English' },
     { href: '/about', name: 'About' },
   ]
 

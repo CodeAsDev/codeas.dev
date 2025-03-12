@@ -59,29 +59,8 @@
 
   /* Anonymous Pro Minus */
   @font-face {
-    font-family: 'apm-b';
-    src: url('/fonts/apm-b.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'apm-bi';
-    src: url('/fonts/apm-bi.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
     font-family: 'apm';
     src: url('/fonts/apm.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'apm-i';
-    src: url('/fonts/apm-i.ttf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -102,23 +81,11 @@
     font-style: normal;
     font-display: swap;
   }
+
+  /* Alibaba PuHuiTi 3 */
   @font-face {
-    font-family: 'sg-m';
-    src: url('/fonts/sg-m.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'sg-sb';
-    src: url('/fonts/sg-sb.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'sg-b';
-    src: url('/fonts/sg-b.ttf');
+    font-family: 'pht';
+    src: url('/fonts/pht-thin.woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

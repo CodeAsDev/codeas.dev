@@ -40,14 +40,14 @@ function MobileNav() {
             Home
           </MobileLink>
           <MobileLink
-            href="/blog"
+            href="/posts"
             className={cn(
               'text-muted-foreground',
-              pathname === '/blog' ? 'text-foreground underline decoration-primary underline-offset-8' : '',
+              pathname === '/posts' ? 'text-foreground underline decoration-primary underline-offset-8' : '',
             )}
             onOpenChange={setOpen}
           >
-            Blog
+            Posts
           </MobileLink>
           <MobileLink
             href="/about"
